@@ -7,11 +7,6 @@ function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-while(validateEmail(gm)==false){
-    gm=prompt('nhap lai')  
-}
-console.log(gm);
-
 function validzmk(pw){
     var patt1 = /[a-z]/g;
      return patt1.test(pw);
@@ -21,15 +16,26 @@ function valid1mk(km){
     return patt2.test(km);
 
 }
+
+while(validateEmail(gm)==false){
+    gm=prompt('nhap lai')  
+}
+console.log(gm);
+
 let mk = prompt('Mat khau');
 
-while( valid1mk(mk)==false || validzmk(mk)==false){
+while( valid1mk(mk)==false || validzmk(mk)==false)
+{
     mk=prompt('Vui long nhap dung cu phap');
 } 
+
 let mk1 = prompt('nhap lai makahu');
-while(mk!== mk1){
+
+while(mk!== mk1)
+{
     mk1=prompt('vui long nhap dung');
 }
+
 console.log(mk);
 
 
@@ -40,30 +46,42 @@ console.log(mk);
 //2
 let item =['a','b','c'];
 let i=prompt("what do you want(C,R,D,U)?")
-if(i=='R'){
+
+if(i=='R')
+{
     console.log(item);
 }
-if(i=='C'){
+
+if(i=='C')
+{
     let k=prompt("Name new items?");
     item.push(k);
     console.log(item);
 }
-if (i=='U'){
+
+if (i=='U')
+{
 let n=prompt('Vitrimuonthaydoi');
 let m= prompt('Ten do vat moi');
 item[n-1]=m;
 console.log(item);
 }
-if (i=='D'){
+if (i=='D')
+{
     let u =prompt("vitrimuonxoa");
     let y=prompt('Bac co chac k?');
-    if (y=='Y') {item.splice(u-1,1);
+    
+    if (y=='Y') 
+    {   
+        item.splice(u-1,1);
         console.log(item);        
-    } else if (y=='N'){
+    } 
+    else if (y=='N')
+    {
         console.log(item);}
         else{ console.log(item);
-            }        
-    }
+    }        
+}
 
 //3
 function pri(num) {
@@ -99,11 +117,13 @@ function pri(num) {
 
 //4
 let str = prompt('noun');
+
 function valed(){
 var res = str.split("");
 let chinh = ['a','o','i','u','e'];
 let at ='bcdfghjklmnpqrstvwxyz';
 var phu = at.split('');
+    
 for(i=0;i<res.length;i++){
     for(y=0;y< chinh.length;y++){
         if (res[i]===chinh[y]){
@@ -111,11 +131,13 @@ for(i=0;i<res.length;i++){
                                 }
     }
                         }
+    
 for(k=0;k<res.length;k++){
     for(x=0;x< phu.length;x++){
         if (res[k]===phu[x]){
             console.log(res[k]);
 }}}}
+
 valed(str);
 
 //5
@@ -123,11 +145,7 @@ let k = Math.floor(Math.random()*101);
 let d = prompt('doan');
 console.log(k);
 
-if (d===k){
-    console.log('Pingo');
-    
-}
-else{
+while(d!=k){
     console.log('Incorrect');
     if(d<k){
         console.log('The number is greater');
@@ -136,5 +154,9 @@ else{
         console.log('the number is smaller');
         
     }
-    
+    d= prompt('doan lai');    
+}
+
+if (d==k){ 
+    console.log('Pingo');
 }
