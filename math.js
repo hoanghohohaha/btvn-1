@@ -9,7 +9,7 @@ var op = [ "+",  "-"][Math.floor(Math.random()*2)];
 var op1 = [ " ",  "-"][Math.floor(Math.random()*2)];
 var o = eval(op1+c)
 document.getElementById('mathcontainer').textContent= a + ' ' + op + ' '  + b + ' = ' + op1 + c;
-var point =0;
+var point = 0;
 var dem;
 var timetime;
 function reset_animation() {
@@ -43,7 +43,9 @@ function time(){
  
         
 function play(){
-    point==0;
+    point = 0;
+    clearTimeout(timetime);
+    document.getElementById('point').textContent="Point:"+ point;
     document.getElementById('main').style.display='none';
     document.getElementById('loadercontainer').style.display='flex';
     document.getElementById('gameovercontainer').style.display='none';
@@ -54,7 +56,7 @@ function play(){
         document.getElementById('forgame').style.display='block';
     }, 2000);
     randommath();
-    document.getElementById('timebar').style.animationName='time1'
+    document.getElementById('timebar').style.animationName='time1';
     time();
     reset_animation();
 }
@@ -75,7 +77,7 @@ function true1(){
         document.getElementById('gameovercontainer').style.display='block';
         document.getElementById('forgame').style.display='none';
         document.getElementById('gameovertextcontain').innerHTML="Gameover<br> "+point;
-        point==0;
+        point=0;
         console.log(point);
         
     }
@@ -92,10 +94,10 @@ function false1(){
 
     }else{
         document.getElementById('gameovercontainer').style.display='block';
-        document.getElementById('gameovertextcontain').innerHTML="Gameover<br> "+point;
+        document.getElementById('gameovertextcontain').innerHTML="Gameover<br> "+ point;
         document.getElementById('forgame').style.display='none';
-        point==0;
-        console.log(point)
+        point=0;
+        console.log(point);
     }
 }
 function home(){
@@ -103,6 +105,8 @@ function home(){
     document.getElementById('loadercontainer').style.display='none';
     document.getElementById('gameovercontainer').style.display='none';
     document.getElementById('forgame').style.display ='none';
+    point = 0;
+    clearTimeout(timetime);
 
 }
 
