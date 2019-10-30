@@ -35,7 +35,6 @@ delete inventory.pounch;
 console.log(inventory);
 
 //3
-var lenh = prompt('What do you want?(Create;Edit;View;Delete)');
 var Stu=[];
 // inventory={
 //         "id":500,
@@ -122,7 +121,13 @@ function Delete(){
     Stu.splice(Stu.find(x => x.id == o),1);
     console.log(Stu);
 }
+
+function Exit(){
+ break;
+}
+
 for(;;){
+var lenh = prompt('What do you want?(Create;Edit;View;Delete;Exit)');
 if(lenh=='Create'){
     Create();
     console.log(Stu);
@@ -132,5 +137,7 @@ if(lenh=='Create'){
     Edit();
 }else if(lenh == 'Delete'){
     Delete();
+}else if(lenh ==' Exit'){
+Exit();
 }
 }
