@@ -41,9 +41,8 @@ for(let i = 0;i < more.length;i++){
         console.log(div);
         console.log(tacgia);
         console.log(name);
-        
-        console.log(name.innerText);
-        console.log(tacgia.innerText);
+        console.log(name[0].innerText);
+        console.log(tacgia[0].innerText);
         
     })
     ; 
