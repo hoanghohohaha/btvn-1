@@ -2,23 +2,44 @@ document.getElementById('loadingcontain').style.display='block';
 setTimeout(() => {
     document.getElementById('home').style.display='block';
     document.getElementById('loadingcontain').style.display='none';
-    document.getElementsByTagName('gameovercontain').style.display='none'
+    document.getElementById('gameovercontain').style.display='none'
 },2000);
 var rightcolor;
+var wrongcolor1;
+var r;
+var g;
+var b;
+
 function randomcolor(){
-    var r = Math.floor(Math.random() * 255) + 1;
-    var g = Math.floor(Math.random() * 255) + 1;
-    var b = Math.floor(Math.random() * 255) + 1;
+    r = Math.floor(Math.random() * 255) + 1;
+    g = Math.floor(Math.random() * 255) + 1;
+    b = Math.floor(Math.random() * 255) + 1;
     document.getElementById('content').textContent='rgb=('+r+','+g+','+b+')';
     rightcolor= 'rgb('+r+','+g+','+b+')';
     console.log(rightcolor);
     return rightcolor;
 }
 randomcolor();
+randomwrongcolor();
 console.log(rightcolor);
 
-document.getElementsByClassName('ball').style.backgroundColor=rightcolor;
+var ball=document.getElementsByClassName('ball');
 var score= 0;
+
+function reset(){
+    Ballindex= Math.floor(Math.random()*3);
+    console.log(Ballindex);
+    randomcolor();
+    for(i=0;i<ball.length;i++){
+        if ( i == Ballindex){
+            ball[i].style.backgroundColor= rightcolor;
+        }else{
+            randomwrongcolor();
+            console.log(wrongcolor);
+            ball[i].style.backgroundColor= wrongcolor;
+        }
+    }
+}
 
 function play(){
     score = 0;
@@ -30,9 +51,10 @@ function play(){
         document.getElementById('loadingcontain').style.display='none';
     },2000);
     setTimeout(() => {
-        document.getElementById('maincontain').style.display='block';
+        document.getElementById('maincontain').style.display='flex';
     }, 2000);
     randomcolor();
+    reset();
 }
 
 function home(){
@@ -43,25 +65,42 @@ function home(){
     point = 0;
 }
 function randomwrongcolor(){
-    var r1 = r + Math.floor(Math.random()*100)-50;
-    var g1 = g + Math.floor(Math.random()*100)-50;
-    var b1 = b + Math.floor(Math.random()*100)-50;
-
-    var r2 = r + Math.floor(Math.random()*100)-50;
-    var g2 = g + Math.floor(Math.random()*100)-50;
-    var b2 = b + Math.floor(Math.random()*100)-50;
-
-    return r1,g1,b1,r2,g2,b2;
+    r1 =r +Math.floor(Math.random()*100)-50;
+    g1 =g +Math.floor(Math.random()*100)-50;
+    b1 =b +Math.floor(Math.random()*100)-50;
+    wrongcolor='rgb('+r1+','+g1+','+b1+')';
+    return wrongcolor;
 }
 
 function gameover(){
-    document.getElementById('gameovercontain').style.display='block';
+    document.getElementById('gameovercontain').style.display='flex';
+    document.getElementById('maincontain').style.display ='none';
+    document.getElementById('loadingcontain').style.display='none';
 }
 
-var Ballindex= Math.floor(Math.random()*3)+1;
+var Ballindex= Math.floor(Math.random()*3);
 var ball = document.getElementsByClassName('ball');
-for(i=0;i<=ball.length;i++){
-    if ( i == Ballindex){
-        ball[i].style.backgroundColor=rightcolor;
-    }
+console.log(ball);
+
+
+for(i=0;i<ball.length;i++){
+    var btn=ball[i];
+    btn.addEventListener('click',function(e){
+        console.log(e.target);
+        k=e.target.getAttribute('index');
+        console.log(k);
+        if(k ==Ballindex){
+            score++;
+            console.log(score);
+            document.getElementById('score').textContent="SCORE:"+ score;
+            reset();
+        }else{
+            document.getElementById('gameover').innerHTML="Gameover<br>"+ score;
+            score= 0;
+            document.getElementById('gameovercontain').style.display='flex';
+            document.getElementById('maincontain').style.display='none';
+            
+        }
+    })
+    ; 
 }

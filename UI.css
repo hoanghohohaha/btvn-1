@@ -264,9 +264,9 @@ h1 {
     height: auto;
     background-color: black;
     display:none;
-    padding: 200px 0px;
+    padding: 50px 0px;
     position: relative;
-    margin-top: 50%;
+    margin-top: 30%;
     transform: translateY(-50%);
    
 }
@@ -280,7 +280,7 @@ h1 {
     display: inline-block;
 }
 #maincontain{
-    display: flex;
+    display: none;
     width: 100%;
     height: 100%;
     flex-flow: column;
@@ -296,7 +296,39 @@ h1 {
     border-radius: 100%;
     margin: 10px;
     margin-top:50%; 
+    background-color: white;
 }
 #score{
-    
+    font-size: 200%;
+    color: aliceblue;
+    text-align: center;
+}
+#gameovercontain{
+  display: none;
+  flex-flow: column;
+  justify-items: center;
+  align-items:center;
+}
+.homebtn{
+  height: 100px;
+  width: 100px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  border-radius: 100%;
+  background-color:black;
+  display: inline-block;
+}
+#content{
+  margin-top: 20%;
+  transform: translateY(-50%);
+  padding:10px;
+  font-size:150%;
+  color: aliceblue;
+}
+#gameover{
+  padding-top:50px;
+  font-size: 250%;
+  color: aliceblue;
+  margin:10px;
+  text-align: center;
 }
