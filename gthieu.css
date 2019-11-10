@@ -109,7 +109,7 @@ body{
 .picture{
     width: 100%;
     height:auto;
-    margin:0px
+    margin:0px;
 }
 #boxcontain{
     margin: 0px;
@@ -160,4 +160,47 @@ body{
 }
 #box4:hover{
     background-size:230%;
+}
+#box1info{
+    width: 100%;
+    color: black;
+    font-size: 250%;
+    margin: 0px;
+    height: auto;
+    display:flex;
+    justify-content: flex-end;
+}
+.boxbtn{
+    width: 50px;
+    height: 50px;
+    background: url('https://media.istockphoto.com/photos/red-x-painting-illustration-picture-id466688576?k=6&m=466688576&s=612x612&w=0&h=0bY8_LuP-GwKbPzgMfK794fRd0SNIIz6eWr4Cew3g74=') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#box2info{
+    width: 100%;
+    color: black;
+    font-size: 250%;
+    margin: 0px;
+    height: auto;
+    display:flex;
+    justify-content: flex-end;
+}
+#box3info{
+    width: 100%;
+    color: black;
+    font-size: 250%;
+    margin: 0px;
+    height: auto;
+    display:flex;
+    justify-content: flex-end;
+}
+#box4info{
+    width: 100%;
+    color: black;
+    font-size: 250%;
+    margin: 0px;
+    height: auto;
+    display:flex;
+    justify-content: flex-end;
 }
