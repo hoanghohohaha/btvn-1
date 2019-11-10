@@ -1,3 +1,4 @@
+
 document.getElementById('loadingcontain').style.display='block';
 setTimeout(() => {
     document.getElementById('home').style.display='block';
@@ -9,6 +10,15 @@ var wrongcolor1;
 var r;
 var g;
 var b;
+
+function playsound(){
+    document.getElementById('audio').play();
+}
+
+function stopsound(){
+    document.getElementById('audio').pause();
+    document.getElementById('audio').currentTime=0;
+}
 
 function randomcolor(){
     r = Math.floor(Math.random() * 255) + 1;
@@ -52,9 +62,11 @@ function play(){
     },2000);
     setTimeout(() => {
         document.getElementById('maincontain').style.display='flex';
+        playsound();
     }, 2000);
     randomcolor();
     reset();
+    
 }
 
 function home(){
@@ -99,7 +111,7 @@ for(i=0;i<ball.length;i++){
             score= 0;
             document.getElementById('gameovercontain').style.display='flex';
             document.getElementById('maincontain').style.display='none';
-            
+            stopsound();
         }
     })
     ; 

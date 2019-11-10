@@ -295,7 +295,7 @@ h1 {
     width: 100px;
     border-radius: 100%;
     margin: 10px;
-    margin-top:50%; 
+    margin-top:20%; 
     background-color: white;
 }
 #score{
@@ -326,9 +326,17 @@ h1 {
   color: aliceblue;
 }
 #gameover{
+  margin-top: 20px;
   padding-top:50px;
   font-size: 250%;
   color: aliceblue;
   margin:10px;
   text-align: center;
+}
+#btncontain{
+  margin: 5px;
+  padding: 10px;
+}
+#audio{
+  display: none;
 }
